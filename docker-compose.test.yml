@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  hapi-starter-kit:
+    build:
+      context: .
+      args:
+        SSH_KEY: ${SSH_KEY}
+    image: ${IMAGE_NAME}
+    # Disable mounting of volumes if packages are not installed locally.
+    volumes:
+     - /app/node_modules
+    env_file:
+      - bin/test.env
+    # The docker image already contains production code with dependencies;
+    # hence we only need to add the dependencies for running the full suite
+    # of tests.
+    command:
+      - /bin/bash
+      - -c
+      - yarn && yarn test
+
+

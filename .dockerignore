@@ -1,0 +1,5 @@
+Dockerfile
+*.md
+coverage
+node_modules
+.*

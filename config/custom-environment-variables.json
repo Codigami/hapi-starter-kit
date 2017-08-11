@@ -1,0 +1,21 @@
+{
+  "app": {
+    "port": "APP_PORT",
+    "name": "APP_NAME",
+    "logLevel": "LOG_LEVEL"
+  },
+  "statsd": {
+    "host": "STATSD_HOST",
+    "port": "STATSD_PORT",
+    "prefix": "STATSD_PREFIX"
+  },
+  "openWeather": {
+    "apiKey": "OPEN_WEATHER_API_KEY",
+    "apiSuccessful": "OPEN_WEATHER_API_SUCCESSFUL",
+    "apiFailed": "OPEN_WEATHER_API_FAILED"
+  },
+  "newrelic": {
+    "appName": "NEWRELIC_APP_NAME",
+    "licenseKey": "NEWRELIC_LICENSE_KEY"
+  }
+}
