@@ -1,6 +1,6 @@
 {
   "app": {
-    "port": "3031",
+    "port": "3030",
     "name": "hapi-starter",
     "logLevel": "info"
   },
