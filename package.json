@@ -9,6 +9,11 @@
     "url": "https://github.com/Codigami/hapi-starter-kit-oss"
   },
   "main": "index.js",
+  "engines": {
+    "node": ">=8.3.0",
+    "npm": ">=5.3.0",
+    "yarn": ">=0.27.5"
+  },
   "scripts": {
     "start": "node index.js",
     "lint": "eslint *.js server test && echo Lint Passed ❤",
