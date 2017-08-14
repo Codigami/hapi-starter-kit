@@ -10,6 +10,9 @@ const routes = [{
   path: '/ping',
   handler: function (request, reply) {
     return reply('pong')
+  },
+  config: {
+    tags: ['api']
   }
 }]
 
