@@ -38,42 +38,36 @@ describe('## Weather APIs', () => {
     const cityName = 'Mumbai'
     let getWeatherByCityNameStub
 
-    before((done) => {
-      getWeatherByCityNameStub = sinon.stub(weatherService, 'getWeatherByCityName').callsFake(() => {
-        return Promise.resolve(apiResponse)
+    before(() => {
+      getWeatherByCityNameStub = sinon.stub(weatherService, 'getWeatherByCityName').callsFake(async () => {
+        return await Promise.resolve(apiResponse)
       })
-      done()
     })
 
-    after((done) => {
+    after(() => {
       getWeatherByCityNameStub.restore()
-      done()
     })
 
-    it('should return weather for the given city', (done) => {
+    it('should return weather for the given city', async () => {
       const options = {
         method: 'GET',
         url: API_PATH + '/getWeatherByCityName?cityName=' + cityName
       }
 
-      server.inject(options, function (res) {
-        res.statusCode.should.equal(httpStatus.OK)
-        getWeatherByCityNameStub.should.have.been.calledWith(cityName)
-        res.result.should.deep.equal(apiResponse)
-        done()
-      })
+      const res = await server.inject(options)
+      res.statusCode.should.equal(httpStatus.OK)
+      getWeatherByCityNameStub.should.have.been.calledWith(cityName)
+      res.result.should.deep.equal(apiResponse)
     })
 
-    it('should return an error if cityName is not present', (done) => {
+    it('should return an error if cityName is not present', async () => {
       const options = {
         method: 'GET',
         url: API_PATH + '/getWeatherByCityName'
       }
 
-      server.inject(options, function (res) {
-        res.statusCode.should.equal(httpStatus.BAD_REQUEST)
-        done()
-      })
+      const res = await server.inject(options)
+      res.statusCode.should.equal(httpStatus.BAD_REQUEST)
     })
   })
 })

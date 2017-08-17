@@ -4,6 +4,7 @@
 
 const nock = require('nock')
 const chai = require('chai')
+const httpStatus = require('http-status')
 const sinonChai = require('sinon-chai')
 const config = require('config')
 
@@ -34,24 +35,20 @@ describe('## Weather Service', () => {
     const cityName = 'Mumbai'
 
     // mock openWeatherAPI
-    before((done) => {
+    before(() => {
       nock(openWeatherHostname)
         .get('/data/2.5/weather')
         .query({q: cityName, APPID: config.get('openWeather.apiKey')})
-        .reply(200, apiResp)
-      done()
+        .reply(httpStatus.OK, apiResp)
     })
 
-    after((done) => {
+    after(() => {
       nock.restore()
-      done()
     })
 
-    it('should return weather for the given city', (done) => {
-      weatherService.getWeatherByCityName(cityName).then((data) => {
-        data.should.deep.equal(apiResp)
-        done()
-      })
+    it('should return weather for the given city', async () => {
+      const data = await weatherService.getWeatherByCityName(cityName)
+      data.should.deep.equal(apiResp)
     })
   })
 })
