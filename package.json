@@ -18,7 +18,8 @@
     "start": "node index.js",
     "lint": "eslint *.js server test && echo Lint Passed ❤",
     "test": "NODE_ENV=test istanbul --include-all-sources cover _mocha -- -u bdd $(find test -name '*.js') && istanbul check-coverage && echo All tests passed 👍",
-    "precommit": "yarn lint && yarn test"
+    "precommit": "yarn lint && yarn test",
+    "report-coverage": "coveralls < ./coverage/lcov.info"
   },
   "dependencies": {
     "axios": "0.16.2",
@@ -40,6 +41,7 @@
   },
   "devDependencies": {
     "chai": "4.1.1",
+    "coveralls": "2.13.1",
     "eslint": "3.4.0",
     "husky": "0.14.3",
     "istanbul": "1.1.0-alpha.1",
