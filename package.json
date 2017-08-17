@@ -1,6 +1,6 @@
 {
   "name": "hapi-starter-kit",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Hapi Starter Kit",
   "author": "Kunal Kapadia",
   "license": "MIT",
@@ -17,7 +17,7 @@
   "scripts": {
     "start": "node index.js",
     "lint": "eslint *.js server test && echo Lint Passed ❤",
-    "test": "NODE_ENV=test istanbul --include-all-sources cover _mocha -- -u bdd $(find test -name '*.js') && istanbul check-coverage --statements 50 --functions 20 --branches 20 --lines 50 && echo All tests passed 👍",
+    "test": "NODE_ENV=test istanbul --include-all-sources cover _mocha -- -u bdd $(find test -name '*.js') && istanbul check-coverage && echo All tests passed 👍",
     "precommit": "yarn lint && yarn test"
   },
   "dependencies": {
