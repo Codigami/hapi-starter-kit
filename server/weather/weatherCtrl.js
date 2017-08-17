@@ -1,15 +1,9 @@
 'use strict'
 
-/***
- * Internal modules
- */
 const weatherService = require('./weatherService')
 
-const getWeatherByCityName = function (cityName) {
-  return weatherService.getWeatherByCityName(cityName)
-    .then((data) => {
-      return data
-    })
+const getWeatherByCityName = async function (cityName) {
+  return await weatherService.getWeatherByCityName(cityName)
 }
 
 module.exports = {
