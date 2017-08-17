@@ -21,6 +21,7 @@
     "precommit": "yarn lint && yarn test"
   },
   "dependencies": {
+    "axios": "0.16.2",
     "bluebird": "3.5.0",
     "boom": "5.2.0",
     "bunyan": "1.8.12",
@@ -35,8 +36,6 @@
     "joi": "10.6.0",
     "lodash": "4.17.4",
     "newrelic": "2.1.0",
-    "request": "2.81.0",
-    "request-promise": "4.1.1",
     "vision": "4.1.1"
   },
   "devDependencies": {
