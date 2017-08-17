@@ -17,10 +17,8 @@ const API_PATH = '/' + config.get('app.name') + '/api/1.0'
 chai.should()
 chai.use(sinonChai)
 
-
-
-const apiResp = {
-  'name': 'Navi Mumbai',
+const apiResponse = {
+  'name': 'Mumbai',
   'coord': {
     'lon': 73.02,
     'lat': 19.04
@@ -37,12 +35,12 @@ const apiResp = {
 
 describe('## Weather APIs', () => {
   describe('# GET /getWeatherByCityName', () => {
-    const cityName = 'Vashi'
+    const cityName = 'Mumbai'
     let getWeatherByCityNameStub
 
     before((done) => {
-      getWeatherByCityNameStub = sinon.stub(weatherService, 'getWeatherByCityName', function () {
-        return Promise.resolve(apiResp)
+      getWeatherByCityNameStub = sinon.stub(weatherService, 'getWeatherByCityName').callsFake(() => {
+        return Promise.resolve(apiResponse)
       })
       done()
     })
@@ -61,7 +59,7 @@ describe('## Weather APIs', () => {
       server.inject(options, function (res) {
         res.statusCode.should.equal(httpStatus.OK)
         getWeatherByCityNameStub.should.have.been.calledWith(cityName)
-        res.result.should.deep.equal(apiResp)
+        res.result.should.deep.equal(apiResponse)
         done()
       })
     })

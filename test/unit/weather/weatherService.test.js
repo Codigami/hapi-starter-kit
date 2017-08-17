@@ -14,7 +14,7 @@ chai.should()
 chai.use(sinonChai)
 
 const apiResp = {
-  'name': 'Navi Mumbai',
+  'name': 'Mumbai',
   'coord': {
     'lon': 73.02,
     'lat': 19.04
@@ -31,7 +31,7 @@ const apiResp = {
 
 describe('## Weather Service', () => {
   describe('.getWeatherByCityName', () => {
-    const cityName = 'Vashi'
+    const cityName = 'Mumbai'
 
     // mock openWeatherAPI
     before((done) => {

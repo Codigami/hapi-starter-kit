@@ -17,5 +17,3 @@ services:
       - /bin/bash
       - -c
       - yarn && yarn test
-
-
