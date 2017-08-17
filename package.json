@@ -1,12 +1,12 @@
 {
-  "name": "hapi-starter-kit-oss",
+  "name": "hapi-starter-kit",
   "version": "1.1.0",
   "description": "Hapi Starter Kit",
   "author": "Kunal Kapadia",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Codigami/hapi-starter-kit-oss"
+    "url": "https://github.com/Codigami/hapi-starter-kit"
   },
   "main": "index.js",
   "engines": {

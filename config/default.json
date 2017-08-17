@@ -1,19 +1,7 @@
 {
   "app": {
     "port": "3030",
-    "name": "hapi-starter",
+    "name": "hapi-starter-kit",
     "logLevel": "info"
-  },
-  "statsd": {
-    "host": "127.0.0.1",
-    "port": "8125",
-    "prefix": "counter.hapistarter."
-  },
-  "openWeather": {
-    "apiSuccessful": "open_weather_api_successful",
-    "apiFailed": "open_weather_api_failed"
-  },
-  "newrelic": {
-    "appName": "hapi-starter-kit"
   }
 }
