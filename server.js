@@ -1,14 +1,8 @@
 'use strict'
 
-/**
- * Vendor modules
- */
 const Hapi = require('hapi')
 const config = require('config')
 
-/**
- * Internal modules
- */
 const routes = require('./routes')
 const plugins = require('./plugins')
 const logger = require('./server/utils/logger')
@@ -19,15 +13,20 @@ server.connection({
   port: config.get('app.port')
 })
 
-//attach routes here
+// attach routes here
 server.route(routes)
 
-//register plugins
-server.register(plugins, function (err) {
-  if (err) {
-    logger.error(err, 'Failed to register hapi plugins')
+// register plugins
+const registerPlugins = async () => {
+  try {
+    await server.register(plugins)
+  } catch (error) {
+    logger.error(error, 'Failed to register hapi plugins')
+    throw error
   }
-})
+}
+
+registerPlugins()
 
 //export modules
 module.exports = server
