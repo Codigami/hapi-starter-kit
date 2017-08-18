@@ -1,5 +1,5 @@
 # Use latest version of node v8
-FROM node:8.3.0
+FROM node:8.4.0
 
 #create an app directory
 RUN mkdir /app
