@@ -34,21 +34,35 @@ describe('## Weather Service', () => {
   describe('.getWeatherByCityName', () => {
     const cityName = 'Mumbai'
 
-    // mock openWeatherAPI
-    before(() => {
+    it('should return weather for the given city', async () => {
+      // mock openWeatherAPI
       nock(openWeatherHostname)
         .get('/data/2.5/weather')
         .query({q: cityName, APPID: config.get('openWeather.apiKey')})
         .reply(httpStatus.OK, apiResp)
-    })
 
-    after(() => {
-      nock.restore()
-    })
-
-    it('should return weather for the given city', async () => {
       const data = await weatherService.getWeatherByCityName(cityName)
       data.should.deep.equal(apiResp)
+
+      // clean all interceptors
+      nock.cleanAll()
+    })
+
+    it('should return error in case of non 200 response', async () => {
+      // mock openWeatherAPI
+      nock(openWeatherHostname)
+        .get('/data/2.5/weather')
+        .query({q: cityName, APPID: config.get('openWeather.apiKey')})
+        .reply(httpStatus.INTERNAL_SERVER_ERROR)
+
+      try {
+        await weatherService.getWeatherByCityName(cityName)
+      } catch (error) {
+        error.response.status.should.equal(httpStatus.INTERNAL_SERVER_ERROR)
+      }
+
+      // clean all interceptors
+      nock.cleanAll()
     })
   })
 })

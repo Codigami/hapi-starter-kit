@@ -25,5 +25,5 @@ const getWeatherByCityName = async function (cityName) {
 }
 
 module.exports = {
-  getWeatherByCityName: getWeatherByCityName
+  getWeatherByCityName
 }
