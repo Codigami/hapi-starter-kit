@@ -49,7 +49,7 @@ describe('## Weather APIs', () => {
         url: `${API_PATH}/getWeatherByCityName?cityName=${cityName}`
       }
 
-      let res = await server.inject(options)
+      const res = await server.inject(options)
       res.statusCode.should.equal(httpStatus.OK)
       getWeatherByCityNameStub.should.have.been.calledWith(cityName)
       res.result.should.deep.equal(apiResponse)

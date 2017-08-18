@@ -4,6 +4,7 @@
     "es6": true,
     "mocha": true
   },
+
   "rules": {
     //Single quotes
     "quotes": [
@@ -123,10 +124,11 @@
     // Use const wherever possible
     "prefer-const": 2
   },
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
+
+  "parserOptions": {
+    "ecmaVersion": 8 // or 2017
   },
+
   "extends": [
     "eslint:recommended"
   ]
