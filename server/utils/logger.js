@@ -1,10 +1,9 @@
 const bunyan = require('bunyan')
 const config = require('config')
-const appName = require('../../package.json').name
 
 // create a logger instance
 const log = bunyan.createLogger({
-  name: appName,
+  name: config.get('app.name'),
   level: config.get('app.logLevel'),
   serializers: bunyan.stdSerializers
 })
