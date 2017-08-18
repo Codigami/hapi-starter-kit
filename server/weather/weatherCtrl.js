@@ -3,7 +3,7 @@
 const weatherService = require('./weatherService')
 
 const getWeatherByCityName = async function (cityName) {
-  return await weatherService.getWeatherByCityName(cityName)
+  return weatherService.getWeatherByCityName(cityName)
 }
 
 module.exports = {

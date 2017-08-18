@@ -41,7 +41,7 @@ describe('## Weather APIs', () => {
     it('should return weather for the given city', async () => {
       // mock getWeatherByCityName
       getWeatherByCityNameStub = sinon.stub(weatherService, 'getWeatherByCityName').callsFake(async () => {
-        return await Promise.resolve(apiResponse)
+        return Promise.resolve(apiResponse)
       })
 
       const options = {
@@ -54,7 +54,6 @@ describe('## Weather APIs', () => {
       getWeatherByCityNameStub.should.have.been.calledWith(cityName)
       res.result.should.deep.equal(apiResponse)
 
-
       // restore mock
       getWeatherByCityNameStub.restore()
     })
@@ -62,7 +61,7 @@ describe('## Weather APIs', () => {
     it('should return internal server error', async () => {
       // mock getWeatherByCityName
       getWeatherByCityNameStub = sinon.stub(weatherService, 'getWeatherByCityName').callsFake(async () => {
-        return await Promise.reject(new Error(`Failed to fetch weather for ${cityName}`))
+        return Promise.reject(new Error(`Failed to fetch weather for ${cityName}`))
       })
 
       const options = {

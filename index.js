@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const config = require('config')
 
-const server  = require('./server')
+const server = require('./server')
 const logger = require('./server/utils/logger')
 
 const gracefulStopServer = function () {
@@ -50,5 +50,3 @@ const startServer = async function () {
 }
 
 startServer()
-
-

@@ -28,5 +28,5 @@ const registerPlugins = async () => {
 
 registerPlugins()
 
-//export modules
+// export modules
 module.exports = server

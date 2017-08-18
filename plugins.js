@@ -22,10 +22,9 @@ const PRODUCTION = 'production'
  */
 let plugins = []
 
-
 if (config.util.getEnv('NODE_ENV') !== PRODUCTION) {
 
-  //Add hapi swagger integration
+  // add hapi swagger integration
   plugins = plugins.concat([Inert,
     Vision,
     {
@@ -39,7 +38,7 @@ if (config.util.getEnv('NODE_ENV') !== PRODUCTION) {
       }
     }])
 
-  //add good console for log reporting
+  // add good console for log reporting
   plugins.push({
     register: Good,
     options: {
