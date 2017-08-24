@@ -14,7 +14,7 @@ const config = require('config')
  */
 const Package = require('./package.json')
 
-const PRODUCTION = 'production'
+const DEVELOPMENT = 'development'
 
 /**
  * exports array of plugins with configuration.
@@ -22,7 +22,7 @@ const PRODUCTION = 'production'
  */
 let plugins = []
 
-if (config.util.getEnv('NODE_ENV') !== PRODUCTION) {
+if (config.util.getEnv('NODE_ENV') === DEVELOPMENT) {
 
   // add hapi swagger integration
   plugins = plugins.concat([Inert,
