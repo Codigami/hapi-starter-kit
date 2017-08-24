@@ -41,37 +41,45 @@ $ yarn
 ![yarn](https://user-images.githubusercontent.com/4172932/29668267-2b4777f6-88fd-11e7-8006-dd0bcc5cb474.png)
 
 ```bash
+# Start Server
+$ yarn start
+```
+![yarn start](https://user-images.githubusercontent.com/4172932/29668371-9010e5dc-88fd-11e7-9327-68fa1e7944e3.png)
+
+```bash
+# Run Tests
+$ yarn test
+```
+![yarn test](https://user-images.githubusercontent.com/4172932/29669393-ea39b5a4-8900-11e7-80f3-ed3256191ecb.png)
+
+
+### Docker
+```bash
 # copy sample.dev.env to dev.env
 $ cp bin/sample.dev.env bin/dev.env
 ```
 
 ```bash
 # Start Server
-$ yarn start
-```
-![yarn start](https://user-images.githubusercontent.com/4172932/29668371-9010e5dc-88fd-11e7-9327-68fa1e7944e3.png)
-
-
-### Docker
-```bash
 $ bash bin/development.sh
 ```
 ![Docker Development](https://user-images.githubusercontent.com/4172932/29667973-22ae5642-88fc-11e7-8255-9413c8dc037c.png)
 ### 
 
+```bash
+# copy sample.test.env to test.env
+$ cp bin/sample.test.env bin/test.env
+```
 
+```bash
+# Run Tests
+$ bash bin/test.sh
+```
+![Docker Test](![docker test](https://user-images.githubusercontent.com/4172932/29669714-f5ad82ac-8901-11e7-86ae-a9af82ca152c.png)
+)
+### 
 
-## How to use
-
-- Rename `hapi-starter-kit` to your project name
-- Update name and repository url in `package.json`
-- Remove Weather API (demo only)
-- Copy bin/sample.dev.env to bin/dev.env and update the values
-- Copy bin/sample.test.env to bin/sample.test.env and update the values if required
-- Run `yarn` locally (To install yarn via brew `brew update && brew install yarn`)
-- Start development using docker by running `bash bin/development.sh` or `yarn start` for local development
-- Start testing by using docker compose by running `bash bin/test.sh` or `yarn test` for local testing
- 
+### Environment Config
 
 ## Features
 
