@@ -35,25 +35,22 @@ Plug-in your own Database.
 
 ### Getting Started
 ```bash
-### Install dependencies ###
+# Install dependencies
 $ yarn
-# 
-# yarn install v0.27.5
-# [1/4] Resolving packages...
-# [2/4] Fetching packages...
-# [3/4] Linking dependencies...
-# [4/4] Building fresh packages...
-# Done in 15.13s.
-
-### copy sample.dev.env to dev.env ###
-$ cp bin/sample.dev.env bin/dev.env
-
-### Start server ###
-$ yarn start
-# 
-# node index.js
-# {"name":"hapi-starter-kit","hostname":"Kunals-MacBook-Pro.local","pid":34197,"level":30,"msg":"server started at port: 3030 with env: development","time":"2017-08-24T12:46:44.650Z","v":0}
 ```
+![yarn](https://user-images.githubusercontent.com/4172932/29668267-2b4777f6-88fd-11e7-8006-dd0bcc5cb474.png)
+
+```bash
+# copy sample.dev.env to dev.env
+$ cp bin/sample.dev.env bin/dev.env
+```
+
+```bash
+# Start Server
+$ yarn start
+```
+![yarn start](https://user-images.githubusercontent.com/4172932/29668371-9010e5dc-88fd-11e7-9327-68fa1e7944e3.png)
+
 
 ### Docker
 ```bash
