@@ -75,8 +75,8 @@ $ cp bin/sample.test.env bin/test.env
 # Run Tests
 $ bash bin/test.sh
 ```
-![Docker Test](![docker test](https://user-images.githubusercontent.com/4172932/29669714-f5ad82ac-8901-11e7-86ae-a9af82ca152c.png)
-)
+![docker test](https://user-images.githubusercontent.com/4172932/29669714-f5ad82ac-8901-11e7-86ae-a9af82ca152c.png)
+
 ### 
 
 ### Environment Config
