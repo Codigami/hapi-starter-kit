@@ -19,7 +19,7 @@ Plug-in your own Database.
 
 | Feature                                                                                         | Summary                                                                                                                                                                                                                                                      |
 |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Uses latest ES8/ES2017 features (async/await)                                                   | ES6 support using [Babel](https://babeljs.io/).  |
+| Uses latest ES8/ES2017 features (async/await)                                                   | Uses latest ES7 and ES8 features including async/await  |
 | Application Configuration via [config](https://github.com/lorenwest/node-config)                | Node-config organizes hierarchical configurations for your app deployments. It lets you define a set of default parameters, and extend them for different deployment environments (development, qa, staging, production, etc.).
 | Auto Documentation via [hapi-swagger](https://www.npmjs.com/package/hapi-swagger)               | This will self document the API interface. You can also tests your APIs using the Swagger interface.
 | Unit and Integration Tests via [Mocha](https://mochajs.org/) with async/await                   | Demo unit and integration tests using latest ES7/ES8 features. 
@@ -68,6 +68,8 @@ $ yarn test
 
 
 ## Docker
+
+#### Development
 ```bash
 # copy sample.dev.env to dev.env
 $ cp bin/sample.dev.env bin/dev.env
@@ -78,6 +80,8 @@ $ cp bin/sample.dev.env bin/dev.env
 $ bash bin/development.sh
 ```
 ![Docker Development](https://user-images.githubusercontent.com/4172932/29667973-22ae5642-88fc-11e7-8255-9413c8dc037c.png)
+
+### Tests
 
 ```bash
 # copy sample.test.env to test.env
