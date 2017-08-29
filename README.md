@@ -1,9 +1,9 @@
 # Hapi Starter Kit | Hapi based REST application boilerplate, uses async/await
 
 [![Build Status](https://img.shields.io/travis/Codigami/hapi-starter-kit/master.svg?style=flat-square)](https://travis-ci.org/Codigami/hapi-starter-kit)
-[![Coverage Status](	https://img.shields.io/codeclimate/coverage/github/Codigami/hapi-starter-kit.svg?style=flat-square)](https://coveralls.io/github/Codigami/hapi-starter-kit?branch=master)
 [![Code Climate](https://codeclimate.com/github/Codigami/hapi-starter-kit/badges/gpa.svg)](https://codeclimate.com/github/Codigami/hapi-starter-kit)
-[![bitHound Overall Score](https://www.bithound.io/github/Codigami/hapi-starter-kit/badges/score.svg)](https://www.bithound.io/github/KunalKapadia/express-es6-rest-api-starter)
+[![Test Coverage](https://codeclimate.com/github/Codigami/hapi-starter-kit/badges/coverage.svg)](https://codeclimate.com/github/Codigami/hapi-starter-kit/coverage)
+[![bitHound Overall Score](https://www.bithound.io/github/Codigami/hapi-starter-kit/badges/score.svg)](https://www.bithound.io/github/Codigami/hapi-starter-kit)
 [![bitHound Dependencies](https://www.bithound.io/github/Codigami/hapi-starter-kit/badges/dependencies.svg)](https://www.bithound.io/github/Codigami/hapi-starter-kit/master/dependencies/npm)
 [![MIT License](https://img.shields.io/npm/l/stack-overflow-copy-paste.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
