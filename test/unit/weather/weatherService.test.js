@@ -4,6 +4,7 @@
 
 const nock = require('nock')
 const chai = require('chai')
+const httpStatus = require('http-status')
 const sinonChai = require('sinon-chai')
 const config = require('config')
 
@@ -14,7 +15,7 @@ chai.should()
 chai.use(sinonChai)
 
 const apiResp = {
-  'name': 'Navi Mumbai',
+  'name': 'Mumbai',
   'coord': {
     'lon': 73.02,
     'lat': 19.04
@@ -31,27 +32,37 @@ const apiResp = {
 
 describe('## Weather Service', () => {
   describe('.getWeatherByCityName', () => {
-    const cityName = 'Vashi'
+    const cityName = 'Mumbai'
 
-    // mock openWeatherAPI
-    before((done) => {
+    it('should return weather for the given city', async () => {
+      // mock openWeatherAPI
       nock(openWeatherHostname)
         .get('/data/2.5/weather')
         .query({q: cityName, APPID: config.get('openWeather.apiKey')})
-        .reply(200, apiResp)
-      done()
+        .reply(httpStatus.OK, apiResp)
+
+      const data = await weatherService.getWeatherByCityName(cityName)
+      data.should.deep.equal(apiResp)
+
+      // clean all interceptors
+      nock.cleanAll()
     })
 
-    after((done) => {
-      nock.restore()
-      done()
-    })
+    it('should return error in case of non 200 response', async () => {
+      // mock openWeatherAPI
+      nock(openWeatherHostname)
+        .get('/data/2.5/weather')
+        .query({q: cityName, APPID: config.get('openWeather.apiKey')})
+        .reply(httpStatus.INTERNAL_SERVER_ERROR)
 
-    it('should return weather for the given city', (done) => {
-      weatherService.getWeatherByCityName(cityName).then((data) => {
-        data.should.deep.equal(apiResp)
-        done()
-      })
+      try {
+        await weatherService.getWeatherByCityName(cityName)
+      } catch (error) {
+        error.response.status.should.equal(httpStatus.INTERNAL_SERVER_ERROR)
+      }
+
+      // clean all interceptors
+      nock.cleanAll()
     })
   })
 })

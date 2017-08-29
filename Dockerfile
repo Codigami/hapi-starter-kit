@@ -1,5 +1,5 @@
-# take default image of node boron i.e  node 6.x
-FROM node:6.10.1
+# Use latest version of node v8
+FROM node:8.4.0
 
 #create an app directory
 RUN mkdir /app
@@ -17,7 +17,7 @@ RUN yarn --production --pure-lockfile
 COPY . /app/
 
 #expose default port of the docker to 3000
-EXPOSE 3000
+EXPOSE 3030
 
 #runs this command when the container is created, can be overriden in the docker-compose.yml
 CMD ["yarn", "start"]

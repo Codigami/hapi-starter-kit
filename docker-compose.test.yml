@@ -4,8 +4,6 @@ services:
   hapi-starter-kit:
     build:
       context: .
-      args:
-        SSH_KEY: ${SSH_KEY}
     image: ${IMAGE_NAME}
     # Disable mounting of volumes if packages are not installed locally.
     volumes:
@@ -19,5 +17,3 @@ services:
       - /bin/bash
       - -c
       - yarn && yarn test
-
-

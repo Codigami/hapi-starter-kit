@@ -4,8 +4,6 @@ services:
   hapi-starter-kit:
     build:
       context: .
-      args:
-        SSH_KEY: ${SSH_KEY}
     # Disable mounting of volumes if packages are not installed locally.
     volumes:
       - .:/app
@@ -15,23 +13,4 @@ services:
       - bin/dev.env
     # Pick ports from config or env.
     ports:
-      - "3000:3000"
-    links:
-      - statsd
-
-  statsd:
-    image: hopsoft/graphite-statsd
-    # Pick ports from env or config
-    ports:
-      - "3002:80"
-      - "2003:2003"
-      - "8125:8125/udp"
-    # Disable graphana by default.
-#    links:
-#      - grafana
-
-   # Disable grafana by default
-#  grafana:
-#    image: grafana/grafana
-#    ports:
-#      - "3001:3000"
+      - "3030:3030"

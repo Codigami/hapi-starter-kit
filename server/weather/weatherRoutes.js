@@ -1,13 +1,7 @@
 'use strict'
 
-/**
- * Vendor modules
- */
 const config = require('config')
 
-/**
- * Internal modules
- */
 const weatherHandler = require('./weatherHandler')
 const weatherValidations = require('./weatherValidations')
 

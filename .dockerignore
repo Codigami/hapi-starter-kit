@@ -3,3 +3,5 @@ Dockerfile
 coverage
 node_modules
 .*
+!.eslintrc
+!.istanbul.yml
